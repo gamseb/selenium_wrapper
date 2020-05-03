@@ -18,13 +18,13 @@ class SeleniumWrapper():
     def get_driver(self):
         return self.driver
 
-    def deinit_browser(self):
+    def deinit(self):
         try:
             self.driver.quit()
         except:
             print("The driver couldn't be properly closed because of an unknown reason.")
 
-    def find_element(self, locator, timeout=True, suppress_error=False):
+    def find_element(self, locator, timeout=None, suppress_error=False):
         timeout = timeout if timeout is not None else self.default_timeout
 
         def unpack_locator(locator):
@@ -94,3 +94,7 @@ class SeleniumWrapper():
             highlight(element)
 
         return element
+
+    def get_action_chains(self):
+        from selenium.webdriver import ActionChains
+        return ActionChains(self.driver)
