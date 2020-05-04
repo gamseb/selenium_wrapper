@@ -36,6 +36,10 @@ class HARCatcher(SeleniumWrapper):
         self.driver.get(url)
 
     def get_har(self):
+        """
+        Returns the har file as a python dictionary.
+        :return: har file as dict
+        """
         return self.proxy.har
 
     def deinit(self):
@@ -43,4 +47,4 @@ class HARCatcher(SeleniumWrapper):
         try:
             self.driver.quit()
         except:
-            print("The driver couldn't be properly closed because of an unknown reason.")
+            print("The driver couldn't be properly closed for an unknown reason.")
