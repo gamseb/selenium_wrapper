@@ -1,4 +1,4 @@
-# selenium_wrapper
+# Selenium wrapper
 
 The selenium wrapper can be used as a general purpose framework allowing for an easier, faster and less error prone way
 to interact with selenium.
